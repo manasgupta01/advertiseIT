@@ -161,11 +161,9 @@ p {
 }
 
 .thumbImg {
-  background: #fff;
+  background:#fff;
   position: relative;
-  display: block;
-  width: 100%;
-  height: 290px;
-  background-size: cover; /* Add this property */
+  display:block;
+  width:100%;
+  height:290px;
 }
-

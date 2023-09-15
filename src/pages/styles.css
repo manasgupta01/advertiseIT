@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #111;
+  overflow-x: hidden;
+}
+
+body:before {
+  content: "Proyectos";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16em;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px #555;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Add padding for spacing */
+}
+
+section h2 {
+  font-size: 4em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center; /* Center the text */
+}
+
+section .container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; /* Set a maximum width for better readability on large screens */
+  display: flex;
+  flex-direction: column; /* Stack elements on small screens */
+  align-items: center; /* Center content horizontally */
+}
+
+section .container .imgBx {
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for images */
+  height: auto; /* Maintain aspect ratio */
+  overflow: hidden;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+}
+
+section .container .imgBx img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  transition: transform 2s ease; /* Add a smooth transition effect */
+}
+
+section .container .imgBx img:hover {
+  transform: scale(1.05); /* Zoom in on hover */
+}
+
+section .container .parallax-outer .parallax-inner {
+  position: relative;
+  margin-top: 20px; /* Adjust spacing */
+  margin-bottom: 20px; /* Adjust spacing */
+  padding: 20px;
+  background: #333;
+  z-index: 1;
+  max-width: 100%; /* Make the container responsive */
+  color: #fff;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+  border-bottom: 6px solid #4ac7ff;
+  text-align: center; /* Center the content */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 576px) {
+  /* For screens wider than 576px (smaller tablets and up) */
+  section .container {
+    flex-direction: row; /* Revert to original layout on larger screens */
+    justify-content: space-between; /* Adjust spacing between elements */
+    align-items: center;
+  }
+
+  section:nth-child(even) .container .parallax-outer .parallax-inner {
+    left: 0;
+    right: auto; /* Reset the position for even sections */
+  }
+}
+
+/* Additional media queries for other breakpoints as needed */
+	

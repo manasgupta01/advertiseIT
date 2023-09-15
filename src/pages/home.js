@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import ParticlesBg from "particles-bg";
+import Homesection from './homesection';
+import { ParallaxProvider } from "react-scroll-parallax";
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
+
 
 const Home = () => {
   useEffect(() => {
@@ -37,7 +40,7 @@ const Home = () => {
     });
     gsap.timeline({ repeat: -1 })
       .to('.nub', { opacity: 1 })
-      .to('.nub', { attr: { points: '12,12 12,42' }, ease: 'power2' }, '+=0.2')
+      .to('.nub', { attr: { points: '12,12 12,42' }, ease: 'power2' }, '+=0.1')
       .to('.nub', { attr: { points: '12,42 12,42', ease: 'power4.inOut' } })
       .to('.nub', { opacity: 0, ease: 'power2.in' }, '+=0.5');
     gsap.timeline({
@@ -45,23 +48,15 @@ const Home = () => {
     }).to('.dir', { opacity: 0, ease: 'sine.inOut' });
   }, []);
 
+ 
   return (
     <div className="container">
+			<ParticlesBg type="circle" bg={true} />
       <section>
         <h1>Scroll Down</h1>
-        <svg
-          className="dir"
-          width={24}
-          height={54}
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#fff"
-          strokeLinecap="round"
-        >
-          <rect x={2} y={2} rx={10} ry={10} strokeWidth={2} width={20} height={50} />
-          <polyline className="nub" strokeWidth={12} points="12,12 12,12" opacity={0} />
-        </svg>
+        {/* Your SVG code here */}
       </section>
-      <section >
+      <section>
         <div className="txtBlock">
           <h1>Lorem Ipsum</h1>
           <p>
@@ -77,27 +72,34 @@ const Home = () => {
           </p>
         </div>
         <div className="thumbs">
-          <div className="thumb t1">
-            <div className="thumbImg" />
+          {/* Modify the structure of your image containers */}
+          <div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img1.jpg)' }} />
           </div>
-          <div className="thumb t2">
-            <div className="thumbImg" />
+          <div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img2.jpg)' }} />
           </div>
-          <div className="thumb t3">
-            <div className="thumbImg" />
+					<div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img1.jpg)' }} />
           </div>
-          <div className="thumb t4">
-            <div className="thumbImg" />
+          <div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img2.jpg)' }} />
           </div>
-          <div className="thumb t5">
-            <div className="thumbImg" />
+					<div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img1.jpg)' }} />
           </div>
-          <div className="thumb t6">
-            <div className="thumbImg" />
+          <div className="thumb">
+            <div className="thumbImg" style={{ backgroundImage: 'url(/images/img2.jpg)' }} />
           </div>
+          {/* Repeat for other image containers */}
         </div>
       </section>
-    </div>
+			<ParallaxProvider>
+        <Homesection />
+      </ParallaxProvider>
+			
+	 </div>
+      
   );
 };
 
