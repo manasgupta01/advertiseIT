@@ -5,6 +5,7 @@ import App from './App';
 import Home from './pages/home';
 import Nav from './components/Nav';
 import Career from './pages/career';
+import Blog from './pages/blog'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,7 +14,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/career" element={<Career />} />
-					
+					<Route path="/blog" element={<Blog />} />
           {/* Add more routes as needed */}
         </Routes>
     </div>

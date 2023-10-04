@@ -20,6 +20,7 @@ const Nav = () => {
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
         <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link></li>
+				<li><Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Link></li>
         <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link></li>
         <li><Link to="/Career" className={location.pathname === '/Career' ? 'active' : ''}>Career</Link></li>
       </ul>
