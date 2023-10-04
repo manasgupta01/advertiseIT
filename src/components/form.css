@@ -1,0 +1,23 @@
+.form1,.form2{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3%;
+    background: linear-gradient(180deg, rgb(255, 230, 186, 0.3), rgba(255, 237, 222, 0.6));
+    position: relative;
+    backdrop-filter: blur(16px);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 0px 35px rgba(0, 0, 0, 0.08);
+}
+.formbg{
+    position:absolute;
+    background: linear-gradient(180deg, #FFDA89, #FF8B36);
+    box-shadow: inset -2px 0px 4px rgba(255, 255, 255, 0.3), inset 0 0 56px rgb(225, 133, 70, 0.3);
+    filter: drop-shadow(0px 52px 94px rgba(253, 115, 51, 0.349));
+    height: 60%;
+    width: 60%;
+    border-radius: 3%;
+    display: flex;
+    z-index: 0;
+}

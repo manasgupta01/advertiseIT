@@ -1,12 +1,17 @@
 .career{
-    display:flex;
-    flex-direction: column;
-}
-.btnsec{
     display: flex;
     flex-direction: row;
-    background: red;
-    justify-content: space-between;
+}
+.btnsec{
+    display :flex;
+    height: 100%;
+    flex-direction:column;
+    color: #FF512F;
+    
+}
+.formbox{
+    display: flex;
+    flex-direction: column;
 }
 #btnt{
     
