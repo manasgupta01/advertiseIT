@@ -11,12 +11,12 @@ function Career() {
 
       <div className='btnsec'>
 
-        <button id='btn' onClick={() => { setPop("form1");}}>advertiser</button>
-        <button id='btn' onClick={() => { setPop("form2");}}>advertiser</button>
+        <button id='btn' onClick={() => { setPop("form1");}}>form 1</button>
+        <button id='btn' onClick={() => { setPop("form2");}}>form 2</button>
 
       </div>
       <div className='formbox'>
-        <div className='formbg'></div>
+        
         {(pop === "form1")?<Form1/>:<Form2/>}
         
       </div>

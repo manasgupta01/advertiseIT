@@ -182,11 +182,22 @@ p {
 
 }
 .btnsec{
+  background: rgba(255, 255, 255, 0.3);
+  margin:10px;
+ 
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  background: red;
-  margin: 5px;
+ 
+  
+ 
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  
+  position: relative;
   flex:1;
 }
 
@@ -201,7 +212,7 @@ p {
 }
 #btn{
   
-  background-image: linear-gradient(to right, #2fff39 0%, #87dd24  51%, #47ff2f  100%);
+  background-image: linear-gradient(to right, #000200 0%, #21221f  51%, #000000  100%);
           margin: 10px;
           
           padding: 10px 35px;
@@ -220,4 +231,8 @@ p {
           color: #fff;
           text-decoration: none;
 }
+
+
+
+
  
