@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
+const history = require('connect-history-api-fallback'); 
+
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -12,13 +16,25 @@ mongoose.connect('mongodb+srv://manasgupta7624:manasgupta7624@cluster0.9gjs3tc.m
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+mongoose.connection.on('connected', () => {
+  console.log('Connected to MongoDB');
+});
 
-const BlogPost = mongoose.model('BlogPost', {
+app.use(history());
+
+// Define the BlogPost schema and model
+const blogPostSchema = new mongoose.Schema({
   title: String,
   content: String,
 });
 
-// Handle MongoDB connection events (as shown in the previous response)
+const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+
+// Error-handling middleware (You can keep this at the end)
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
 
 // Define API endpoint to add a new blog post
 app.post('/api/blog-posts', async (req, res) => {
@@ -42,8 +58,6 @@ app.post('/api/blog-posts', async (req, res) => {
   }
 });
 
-// ... (previous code)
-
 // Define API endpoint to fetch all blog posts
 app.get('/api/blog-posts', async (req, res) => {
   try {
@@ -55,8 +69,17 @@ app.get('/api/blog-posts', async (req, res) => {
   }
 });
 
-// ... (remaining code)
+// Serve your static files (if applicable) from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Catch-all route that serves your main HTML file
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
