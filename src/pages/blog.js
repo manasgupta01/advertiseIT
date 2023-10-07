@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './blog.css'
 function Blog() {
   const [blogData, setBlogData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +39,9 @@ function Blog() {
     <div className='blog-container'>
       {blogData.map((post, index) => (
         <div key={index} className='blog-post'>
-          <h1>{post.title}</h1>
+          {/* <h1>{post.title}</h1>
+          <p>{post.content}</p> */}
+					<h1>{post.title}</h1>
           <p>{post.content}</p>
         </div>
       ))}
